@@ -6,8 +6,8 @@ from pydantic import BaseModel
 app = FastAPI()
 
 # Supabaseの設定
-SUPABASE_URL = ""
-SUPABASE_KEY = ""
+SUPABASE_URL = "https://pforxoksutbwwdbfnuym.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBmb3J4b2tzdXRid3dkYmZudXltIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjk0NDEwMTUsImV4cCI6MjA0NTAxNzAxNX0.6P3PZhOehTbj-ATWTBiSH5LaSHrWw01vh0645DQoZaY"
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # Pydanticモデル（ユーザー情報）
