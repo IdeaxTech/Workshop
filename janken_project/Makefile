@@ -1,6 +1,6 @@
-.PHONY: all cpp rust go python ts java ruby clean
+.PHONY: all cpp rust go python ts java ruby dart clean
 
-all: cpp rust go python ts java ruby
+all: cpp rust go python ts java ruby dart
 
 cpp:
 	cd cpp && g++ -o janken janken.cpp && ./janken
@@ -22,6 +22,9 @@ java:
 
 ruby:
 	cd ruby && ruby janken.rb
+
+dart:
+	cd dart && dart pub add args && dart run janken.dart --choice 0
 
 clean:
 	rm -f cpp/janken_cpp java/Janken.class typescript/janken.js
