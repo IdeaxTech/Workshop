@@ -45,12 +45,12 @@ fn main() {
         println!("You: {:?}", user_hand);
         println!("Computer: {:?}", computer_hand);
         match (user_hand, computer_hand) {
-            (Hand::Rock, Hand::Scissors) => println!("You win!"),
-            (Hand::Rock, Hand::Paper) => println!("You lose!"),
-            (Hand::Scissors, Hand::Rock) => println!("You lose!"),
-            (Hand::Scissors, Hand::Paper) => println!("You win!"),
-            (Hand::Paper, Hand::Rock) => println!("You win!"),
-            (Hand::Paper, Hand::Scissors) => println!("You lose!"),
+            (Hand::Rock, Hand::Scissors)
+            | (Hand::Scissors, Hand::Paper)
+            | (Hand::Paper, Hand::Rock) => println!("You win!"),
+            (Hand::Rock, Hand::Paper)
+            | (Hand::Scissors, Hand::Rock)
+            | (Hand::Paper, Hand::Scissors) => println!("You lose!"),
             (user, computer) if user == computer => {
                 println!("It's a tie!");
             }
