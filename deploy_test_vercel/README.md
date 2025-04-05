@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.jsで作ったwebアプリを公開してみよう
 
-## Getting Started
+## このプロジェクトを動かす
+- このリポジトリをcloneする
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```zsh
+git clone https://github.com/IdeaxTech/Workshop
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- リポジトリ内のdeploy_test_vercelに移動
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```zsh
+cd Workshop/deploy_test_vercel
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- ローカルでの動作確認
 
-## Learn More
+1. パッケージ関連をインストール
 
-To learn more about Next.js, take a look at the following resources:
+```zsh
+npm i
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. 実行確認
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```zsh
+npm run dev
+```
 
-## Deploy on Vercel
+## 実際に公開してみよう
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. GitHubに自分のリポジトリを作成(Public以外選択しない)
+2. クローンしたプロジェクトのリモートリポジトリを作成したリポジトリに変更
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```zsh
+git remote -rf origin
+git remote add origin (リポジトリのURL)
+```
+
+3. リポジトリにpush
+
+```zsh
+git push origin main
+```
+
+4. リポジトリに公開されたのを確認
+5. Vercel(https://vercel.com/)のサイトを開く
+
+6. GitHubと連携を行う。
+7. Add new→projectを選択し、作成したリポジトリを選択後デプロイ成功
+
+8. deploy成功後リポジトリにURLが紐づけられているのでクリック
+
+## コマンドでdeployしてみよう
+
+- 動作確認後、以下のコマンドを実行
+
+```zsh
+vercel login
+```
+
+- vercelにログインを成功させたら以下のコマンドを実行
+
+```zsh
+vercel
+```
+
+- このコマンドを実行し、いくつかの質問に答えたらdeploy成功。これ以降は以下のコマンドでデプロイ可能
+
+```zsh
+vercel --prod
+```
+
+
+
+
